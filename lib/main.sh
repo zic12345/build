@@ -65,6 +65,9 @@ source "${SRC}"/lib/makeboarddeb.sh						# create board support package
 source "${SRC}"/lib/general.sh							# general functions
 # shellcheck source=chroot-buildpackages.sh
 source "${SRC}"/lib/chroot-buildpackages.sh					# building packages in chroot
+# shellcheck source=chroot-media-packages.sh
+source "${SRC}"/lib/chroot-media-packages.sh					# building multimedia support packages in chroot
+
 
 # compress and remove old logs
 mkdir -p "${DEST}"/debug
@@ -390,6 +393,13 @@ start=$(date +%s)
 # Check and install dependencies, directory structure and settings
 prepare_host
 
+# Give the possibility to only build multimedia support packages
+# (for debugging purposes)
+if [[ $BUILD_MEDIA == only ]]; then
+    build_media_packages
+    exit $?
+fi
+
 [[ $CLEAN_LEVEL == *sources* ]] && cleaning "sources"
 
 # ignore updates help on building all images - for internal purposes
@@ -459,6 +469,9 @@ UBOOT_VER=$(dpkg --info "${DEB_STORAGE}/${CHOSEN_UBOOT}_${REVISION}_${ARCH}.deb"
 
 # build additional packages
 [[ $EXTERNAL_NEW == compile ]] && chroot_build_packages
+
+# build multimedia support packages
+[[ $BUILD_MEDIA == yes ]] && build_media_packages
 
 if [[ $KERNEL_ONLY != yes ]]; then
 	[[ $BSP_BUILD != yes ]] && debootstrap_ng

@@ -808,7 +808,7 @@ prepare_host()
 		find $SRC/output $USERPATCHES_PATH -type d ! -group sudo -exec chgrp --quiet sudo {} \;
 		find $SRC/output $USERPATCHES_PATH -type d ! -perm -g+w,g+s -exec chmod --quiet g+w,g+s {} \;
 	fi
-	mkdir -p $DEST/debs-beta/extra $DEST/debs/extra $DEST/{config,debug,patch} $USERPATCHES_PATH/overlay $SRC/cache/{sources,toolchains,utility,rootfs} $SRC/.tmp
+	mkdir -p $DEST/debs-beta/extra $DEST/debs/{extra,media} $DEST/{config,debug,patch} $USERPATCHES_PATH/overlay $SRC/cache/{sources,toolchains,utility,rootfs} $SRC/.tmp
 
 	# create patches directory structure under USERPATCHES_PATH
 	find $SRC/patch -maxdepth 2 -type d ! -name . | sed "s%/.*patch%/$USERPATCHES_PATH%" | xargs mkdir -p
