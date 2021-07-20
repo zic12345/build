@@ -124,9 +124,9 @@ jobs:
       name: CLI worker 2/5
       runs-on: [self-hosted, Linux, images]
       if: ${{ github.repository_owner == 'Armbian' }}
-      steps:
       env: 
         RC_LIB_TAG: ${{ github.events.inputs.branch }}
+      steps:
 
         - name: Fix permissions
           run: |
