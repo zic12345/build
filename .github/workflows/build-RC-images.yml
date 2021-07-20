@@ -43,7 +43,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -149,7 +149,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -255,7 +255,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -361,7 +361,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -467,7 +467,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -573,7 +573,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -653,7 +653,7 @@ jobs:
       runs-on: [self-hosted, Linux, images, big]
       if: ${{ github.repository_owner == 'Armbian' }}
       env: 
-        RC_LIB_TAG: ${{ github.events.inputs.branch }}
+        RC_LIB_TAG: ${{ github.events.inputs.rc_lib_tag }}
       steps:
 
         - name: Fix permissions
@@ -681,7 +681,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -787,7 +787,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -893,7 +893,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
@@ -999,7 +999,7 @@ jobs:
             fetch-depth: 0
             repository: armbian/build
             path: build
-            ref: ${{ github.events.inputs.branch }}
+            ref: ${{ github.events.inputs.rc_lib_tag }}
             clean: false
 
         - name: Checkout Armbian support scripts
