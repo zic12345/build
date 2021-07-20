@@ -16,6 +16,8 @@ jobs:
       name: CLI worker 1/5
       runs-on: [self-hosted, Linux, images]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -123,6 +125,8 @@ jobs:
       runs-on: [self-hosted, Linux, images]
       if: ${{ github.repository_owner == 'Armbian' }}
       steps:
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
 
         - name: Fix permissions
           run: |
@@ -228,6 +232,8 @@ jobs:
       name: CLI worker 3/5
       runs-on: [self-hosted, Linux, images]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -334,6 +340,8 @@ jobs:
       name: CLI worker 4/5
       runs-on: [self-hosted, Linux, images]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -440,6 +448,8 @@ jobs:
       name: CLI worker 5/5
       runs-on: [self-hosted, Linux, images]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -546,6 +556,8 @@ jobs:
       name: Desktop worker 1/5
       runs-on: [self-hosted, Linux, images, big]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -652,6 +664,8 @@ jobs:
       name: Desktop worker 2/5
       runs-on: [self-hosted, Linux, images, big]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -758,6 +772,8 @@ jobs:
       name: Desktop worker 3/5
       runs-on: [self-hosted, Linux, images, big]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -864,6 +880,8 @@ jobs:
       name: Desktop worker 4/5
       runs-on: [self-hosted, Linux, images, big]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
@@ -970,6 +988,8 @@ jobs:
       name: Desktop worker 5/5
       runs-on: [self-hosted, Linux, images, big]
       if: ${{ github.repository_owner == 'Armbian' }}
+      env: 
+        RC_LIB_TAG: ${{ github.events.inputs.branch }}
       steps:
 
         - name: Fix permissions
