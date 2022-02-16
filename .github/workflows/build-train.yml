@@ -92,7 +92,7 @@ jobs:
 
   Desktop:
     needs: Check
-    if: ${{ success() && github.repository_owner == 'Armbian' }}
+    if: ${{ success() && github.repository_owner == 'Armbian' && github.event.inputs.build-uboot && github.event.inputs.build-uboot != 'false' }}
     uses: armbian/scripts/.github/workflows/build-desktop.yml@master
 
     with:
