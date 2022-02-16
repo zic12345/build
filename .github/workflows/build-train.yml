@@ -115,7 +115,7 @@ jobs:
 
   legacy:
     needs: Check
-    if: ${{ success() && github.repository_owner == 'Armbian' && github.event.inputs.build-uboot == 'true' }}
+    if: ${{ success() && github.repository_owner == 'Armbian' && github.event.inputs.build-uboot && github.event.inputs.build-uboot != 'false' }}
     uses: armbian/scripts/.github/workflows/build-u-boot-with-docker.yml@master
 
     with:
