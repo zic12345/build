@@ -2,10 +2,15 @@ name: Build train
 
 on:
   workflow_dispatch:
+   inputs:
+      build-uboot:
+        type: boolean
+        description: Build u-boot and BSP
+
   push:
     branches:
       - master
-
+   
 jobs:
 
   ##########################################################################################
@@ -110,7 +115,7 @@ jobs:
 
   legacy:
     needs: Check
-    if: ${{ success() && github.repository_owner == 'Armbian' }}
+    if: ${{ success() && github.repository_owner == 'Armbian' && github.event.inputs.build-uboot == 'true' }}
     uses: armbian/scripts/.github/workflows/build-u-boot-with-docker.yml@master
 
     with:
