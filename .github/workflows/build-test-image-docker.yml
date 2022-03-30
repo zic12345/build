@@ -11,7 +11,7 @@ jobs:
 
   Maintain:    
     if: ${{ github.repository_owner == 'Armbian' && contains( github.event.pull_request.labels.*.name, 'desktop') }}
-    uses: armbian/scripts/.github/workflows/build-test-image-docker.yml@master
+    uses: armbian/scripts/.github/workflows/build-test-image-docker.yml@dock
 
     with:
 
