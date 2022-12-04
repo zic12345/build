@@ -25,17 +25,17 @@ jobs:
   #                                                                                        #
   ##########################################################################################
 
-  Desktop:
-    permissions:
-      contents: none
+#  Desktop:
+#    permissions:
+#      contents: none
 
-    if: ${{ (github.repository_owner == 'Armbian') && (contains( github.event.pull_request.labels.*.name, 'Desktop :desktop_computer:') || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}
-    uses: armbian/scripts/.github/workflows/build-test-image-docker.yml@master
+#    if: ${{ (github.repository_owner == 'Armbian') && (contains( github.event.pull_request.labels.*.name, 'Desktop :desktop_computer:') || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') }}
+#    uses: armbian/scripts/.github/workflows/build-test-image-docker.yml@master
 
-    with:
+#    with:
 
-      runner: "ubuntu-latest"
-      reference: ${{ github.event.pull_request.head.sha }}
+#      runner: "ubuntu-latest"
+#      reference: ${{ github.event.pull_request.head.sha }}
 
   CLI:
     permissions:
