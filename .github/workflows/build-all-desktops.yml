@@ -46,5 +46,5 @@ jobs:
 
     with:
 
-      runner: "ubuntu-latest"
+      runner: "small"
       reference: ${{ github.event.pull_request.head.sha }}
