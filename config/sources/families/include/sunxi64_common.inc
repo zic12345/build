@@ -5,7 +5,7 @@ BOOTDELAY=1
 
 BOOTPATCHDIR='u-boot-sunxi'
 BOOTENV_FILE='sunxi.txt'
-UBOOT_TARGET_MAP=';;u-boot-sunxi-with-spl.bin'
+UBOOT_TARGET_MAP="${UBOOT_TARGET_MAP:-;;u-boot-sunxi-with-spl.bin}"
 BOOTSCRIPT='boot-sun50i-next.cmd:boot.cmd'
 LINUXFAMILY=sunxi64
 
@@ -18,12 +18,12 @@ case $BRANCH in
 
 	current)
 		KERNEL_VERSION_LEVEL="5.15"
-		KERNELSWITCHOBJ="tag=v5.15.77"
+		KERNELSWITCHOBJ="tag=v5.15.82"
 		;;
 
 	edge)
 		KERNEL_VERSION_LEVEL=${KERNEL_VERSION_LEVEL:-6.0}
-		KERNELSWITCHOBJ=${KERNELSWITCHOBJ:-'tag=v6.0.7'}
+		KERNELSWITCHOBJ=${KERNELSWITCHOBJ:-'tag=v6.0.12'}
 		;;
 esac
 
