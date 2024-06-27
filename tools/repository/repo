@@ -191,6 +191,7 @@ if [[ $errors -eq 0 ]]; then
 		sudo find "${1}" -name "*.deb" -type f -delete
 else
 	echo "There were some problems $err_txt - leaving incoming directory intact" "err"
+	exit 1
 fi
 }
 
@@ -297,6 +298,7 @@ case $3 in
 		# remove old releases from publishing
 		drop_unsupported_releases
 		publishing "$1" "$2" "$3" "$4" "$5"
+		return $?
 		;;
 
 	*)
@@ -396,4 +398,4 @@ sed 's|"rootDir": ".*"|"rootDir": "'$output'"|g' tools/repository/aptly.conf > "
 CONFIG="${TempDir}/aptly.conf"
 
 # main
-exit $(repo-manipulate "$input" "$output" "$command" "$password" "$releases" "$list")
+repo-manipulate "$input" "$output" "$command" "$password" "$releases" "$list"
